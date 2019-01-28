@@ -44,8 +44,8 @@
       height: 26px;
       outline: none;
       img {
-        width: 100%;
-        height: calc(100% - 2px);
+        width: 82%;
+        height: calc(82% - 2px);
         transition: filter .3s;
         &:hover {
           filter: drop-shadow(0 0 5px rgb(106, 90, 205));
@@ -54,8 +54,8 @@
     }
     #l2d-about {
       img {
-        width: 92%;
-        height: calc(92% - 2px);
+        width: 75%;
+        height: calc(75% - 2px);
       }
     }
   }
