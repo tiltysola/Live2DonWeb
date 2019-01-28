@@ -30,10 +30,11 @@ $(document).on('copy', function (){
     showMessage('你都复制了些什么呀，转载要记得加上出处哦~~', 5000);
 });
 
-function initTips(){
+function initTips(messageurl){
+    console.log(1)
     $.ajax({
         cache: true,
-        url: `./../models/message.json`,
+        url: messageurl,
         dataType: "json",
         success: function (result){
             $.each(result.mouseover, function (index, tips){
@@ -55,7 +56,6 @@ function initTips(){
         }
     });
 }
-initTips();
 
 (function (){
     var text;
