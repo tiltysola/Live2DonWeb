@@ -1,0 +1,14 @@
+{
+    "mouseover": [
+        {
+            "selector": "a",
+            "text": ["您是准备访问 「{text}」 么？"]
+        }
+    ],
+    "click": [
+        {
+            "selector": "#landlord #live2d",
+            "text": ["欸，我说，快点把你的手从我身上拿开！你这个变态！死变态！HENTAI！"]
+        }
+    ]
+}

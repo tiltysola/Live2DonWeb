@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+	<title>Live2d</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/live2d.css">
+	<link rel="stylesheet" type="text/css" href="./unimportant/stylesheets/style.css">
+	<!-- Code Mirror -->
+	<link rel="stylesheet" type="text/css" href="./unimportant/vendor/codemirror-5.43.0/lib/codemirror.css"/>
+	<link rel="stylesheet" type="text/css" href="./unimportant/vendor/codemirror-5.43.0/theme/transparent.css">
+	<link rel="stylesheet" type="text/css" href="./unimportant/vendor/codemirror-5.43.0/addon/scroll/simplescrollbars.css">
+	<script src="./unimportant/vendor/codemirror-5.43.0/lib/codemirror.js"></script>
+	<script src="./unimportant/vendor/codemirror-5.43.0/mode/xml/xml.js"></script>
+	<script src="./unimportant/vendor/codemirror-5.43.0/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="./unimportant/vendor/codemirror-5.43.0/addon/scroll/simplescrollbars.js"></script>
+	<!-- You dont need this file -->
+</head>
+<body>
+	<div id="about">
+		<h1>Live2D on Web ( js, WebGL )</h1>
+		<h2>Illyasviel(<a href="https://github.com/illyasviels">@illyasviels</a>)</h2>
+		<div id="download">
+			<h3>下载地址：</h3>
+			<p>1. 直接使用：<a href="http://dl.einzbernfamily.com/%E6%95%99%E7%A8%8B%E8%B5%84%E6%BA%90/Live2D%20%28Web%29/">Einzbern</a></p>
+			<p>2. 源代码：<a href="https://github.com/illyasviels">GitHub</a></p>
+		</div>
+		<div id="howtouse">
+			<h3>如何使用：</h3>
+			<p>
+				1. 在<code>&lt;head&gt; &lt;/head&gt;</code>任意位置引用样式表： <br>
+				<textarea id="help-setp1">
+<link rel="stylesheet" type="text/css" href="./stylesheets/live2d.css">
+				</textarea>
+			</p>
+			<p>
+				2. 在<code>&lt;body&gt; &lt;/body&gt;</code>任意位置加入代码块： <br>
+				<textarea id="help-setp2">
+<div id="landlord" class="lock">
+	<div id="l2d-message"></div>
+	<div id="l2d-control">
+		<button id="l2d-drag">
+			<img src="./images/drag.svg" alt="" draggable="false"/>
+		</button>
+		<button id="l2d-setting">
+			<img src="./images/setting.svg" alt="" draggable="false"/>
+		</button>
+		<button id="l2d-hide">
+			<img src="./images/hide.svg" alt="" draggable="false"/>
+		</button>
+		<button id="l2d-about">
+			<img src="./images/about.svg" alt="" draggable="false"/>
+		</button>
+	</div>
+	<div id="l2d-setting-box" class="l2d-box">
+		<p>打扰了，还没做好，你去看看别的吧。。。</p>
+	</div>
+	<div id="l2d-hide-box" class="l2d-box">
+		<h1>真的要离开我吗？</h1>
+		<button id="l2d-hide-yes">离开</button>
+		<button id="l2d-hide-no">留下</button>
+	</div>
+	<div id="l2d-about-box" class="l2d-box">
+		<p>项目作者：Illyasviel(<a href="https://github.com/illyasviels">@illyasviels</a>)<br />当前版本号：1.0.0。<br />持续更新请关注作者Github。</p>
+		<button id="l2d-about-yes">我已知晓</button>
+	</div>
+	<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+</div>
+				</textarea>
+			</p>
+			<p>
+				3. 在<code>&lt;/body&gt;</code>之前添加脚本文件： <br>
+				<textarea id="help-setp3">
+<script type="text/javascript" src="./javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="./javascripts/live2d.js"></script>
+<script type="text/javascript" src="./javascripts/message.js"></script>
+<script type="text/javascript" src="./javascripts/extension.js"></script>
+<script type="text/javascript">
+	loadlive2d("live2d", "./models/illyasviel/illyasviel.model.json");
+</script>
+				</textarea>
+			</p>
+		</div>
+		<div id="source">
+			<h3>文件来源：</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>文件路径</th>
+						<th>文件类型</th>
+						<th>文件来源</th>
+						<th>是否修改</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>./images/about.svg</td>
+						<td>位图文件</td>
+						<td>https://www.iconfont.cn/</td>
+						<td>颜色被修改</td>
+					</tr>
+					<tr>
+						<td>./images/drag.svg</td>
+						<td>位图文件</td>
+						<td>https://www.iconfont.cn/</td>
+						<td>颜色被修改</td>
+					</tr>
+					<tr>
+						<td>./images/hide.svg</td>
+						<td>位图文件</td>
+						<td>https://www.iconfont.cn/</td>
+						<td>颜色被修改</td>
+					</tr>
+					<tr>
+						<td>./images/setting.svg</td>
+						<td>位图文件</td>
+						<td>https://www.iconfont.cn/</td>
+						<td>颜色被修改</td>
+					</tr>
+					<tr>
+						<td>./javascripts/extension.js</td>
+						<td>脚本文件</td>
+						<td>Illyasviel (@illyasviels)</td>
+						<td>原创文件</td>
+					</tr>
+					<tr>
+						<td>./javascripts/jquery.min.js</td>
+						<td>脚本文件</td>
+						<td>https://jquery.com/</td>
+						<td>未修改</td>
+					</tr>
+					<tr>
+						<td>./javascripts/live2d.js</td>
+						<td>脚本文件</td>
+						<td>galnetwen (@galnetwen)</td>
+						<td>未修改</td>
+					</tr>
+					<tr>
+						<td>./javascripts/message.js</td>
+						<td>脚本文件</td>
+						<td>galnetwen (@galnetwen)</td>
+						<td>部分字符串被修改</td>
+					</tr>
+					<tr>
+						<td>./models/illyasviel/*.*</td>
+						<td>模型文件</td>
+						<td>http://300.jumpw.com/</td>
+						<td>配置文件被修改</td>
+					</tr>
+					<tr>
+						<td>./models/message.json</td>
+						<td>配置文件</td>
+						<td>galnetwen (@galnetwen)</td>
+						<td>部分字符串被修改</td>
+					</tr>
+					<tr>
+						<td>./stylesheets/live2d.scss</td>
+						<td>样式文件</td>
+						<td>Illyasviel (@illyasviels)</td>
+						<td>原创文件</td>
+					</tr>
+					<tr>
+						<td>./unimportant/*.* (Except: vendor)</td>
+						<td>介绍页</td>
+						<td>Illyasviel (@illyasviels)</td>
+						<td>原创文件</td>
+					</tr>
+					<tr>
+						<td>./unimportant/vendor/codemirror-5.43.0/*.*</td>
+						<td>代码高亮插件</td>
+						<td>CodeMirror</td>
+						<td>样式被修改</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="donate">
+			<h3>捐赠我：</h3>
+			<div class="picture">
+				<div class="alipay">
+					<img src="./unimportant/images/alipay.jpg" alt="">
+				</div>
+				<div class="wechat">
+					<img src="./unimportant/images/wechat.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="landlord" class="lock">
+		<div id="l2d-message"></div>
+		<div id="l2d-control">
+			<button id="l2d-drag">
+				<img src="./images/drag.svg" alt="" draggable="false"/>
+			</button>
+			<button id="l2d-setting">
+				<img src="./images/setting.svg" alt="" draggable="false"/>
+			</button>
+			<button id="l2d-hide">
+				<img src="./images/hide.svg" alt="" draggable="false"/>
+			</button>
+			<button id="l2d-about">
+				<img src="./images/about.svg" alt="" draggable="false"/>
+			</button>
+		</div>
+		<div id="l2d-setting-box" class="l2d-box">
+			<p>打扰了，还没做好，你去看看别的吧。。。</p>
+		</div>
+		<div id="l2d-hide-box" class="l2d-box">
+			<h1>真的要离开我吗？</h1>
+			<button id="l2d-hide-yes">离开</button>
+			<button id="l2d-hide-no">留下</button>
+		</div>
+		<div id="l2d-about-box" class="l2d-box">
+			<p>项目作者：Illyasviel(<a href="https://github.com/illyasviels">@illyasviels</a>)<br />当前版本号：1.0.0。<br />持续更新请关注作者Github。</p>
+			<button id="l2d-about-yes">我已知晓</button>
+		</div>
+		<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+	</div>
+	<script type="text/javascript" src="./javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="./javascripts/live2d.js"></script>
+	<script type="text/javascript" src="./javascripts/message.js"></script>
+	<script type="text/javascript" src="./javascripts/extension.js"></script>
+	<script type="text/javascript">
+		loadlive2d("live2d", "./models/illyasviel/illyasviel.model.json");
+	</script>
+	<script type="text/javascript">
+		var helpSetp1 = CodeMirror.fromTextArea(document.getElementById("help-setp1"), {
+			lineNumbers: true,
+			mode: "text/html",
+			theme: "transparent",
+			matchBrackets: true,
+			scrollbarStyle: "overlay",
+			readOnly: true
+		});
+		var helpSetp2 = CodeMirror.fromTextArea(document.getElementById("help-setp2"), {
+			lineNumbers: true,
+			mode: "text/html",
+			theme: "transparent",
+			matchBrackets: true,
+			scrollbarStyle: "overlay",
+			readOnly: true
+		});
+		var helpSetp3 = CodeMirror.fromTextArea(document.getElementById("help-setp3"), {
+			lineNumbers: true,
+			mode: "text/html",
+			theme: "transparent",
+			matchBrackets: true,
+			scrollbarStyle: "overlay",
+			readOnly: true
+		});
+	</script>
+</body>
+</html>
