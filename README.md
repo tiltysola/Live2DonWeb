@@ -1,13 +1,17 @@
+# Live2D看板娘
+
+> 这是一个放置于Web上的Live2D看板娘插件，可以为您的博客或者个人网站增加一个可爱的看板娘哦！
+
 ![演示效果][1]
 
-## 博客介绍： [奏世界][2]
-## 使用说明： 
-### 1. 在 `<head> </head>` 任意位置引用样式表： 
+### 使用说明： 
+
+#### 1. 在 `<head> </head>` 任意位置引用样式表： 
 ```
 <link rel="stylesheet" type="text/css" href="./stylesheets/live2d.css">
 ```
 
-### 2. 在 `<body> </body>` 任意位置加入代码块：
+#### 2. 在 `<body> </body>` 任意位置加入代码块：
 ```
 <div id="landlord" class="lock">
 	<div id="l2d-message"></div>
@@ -41,7 +45,7 @@
 </div>
 ```
 
-### 3. 在 `</body>` 之前添加脚本文件： 
+#### 3. 在 `</body>` 之前添加脚本文件： 
 ```
 <script type="text/javascript" src="./javascripts/jquery.min.js"></script>
 <script type="text/javascript" src="./javascripts/live2d.js"></script>
@@ -52,5 +56,5 @@
 </script>
 ```
 
-  [1]: https://oss.acgme.cn/typecho/live2donweb.jpg
+  [1]: https://github.com/Illyasviels/Live2DonWeb/blob/master/unimportant/images/live2donweb.jpg
   [2]: https://blog.acgme.cn/index.php/archives/19/
